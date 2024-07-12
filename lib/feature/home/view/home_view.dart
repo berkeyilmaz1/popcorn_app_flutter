@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/feature/home/model/popular_movies_model.dart';
 import 'package:movie_app/feature/home/viewmodel/home_viewmodel.dart';
 import 'package:movie_app/product/constants/text_styles.dart';
 import 'package:movie_app/product/extensions/extensions.dart';
+import 'package:movie_app/product/localization/locale_keys.g.dart';
 import 'package:movie_app/product/widgets/gradient_image.dart';
 import 'package:movie_app/product/widgets/movie_card.dart';
 import 'package:provider/provider.dart';
@@ -29,15 +31,15 @@ class _HomeViewState extends State<HomeView> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   _gradientImage(),
-                  _headerText("Popular"),
+                  _headerText((LocaleKeys.headers_popular)),
                   _popularMovies(),
-                  _headerText("Top Rated"),
+                  _headerText((LocaleKeys.headers_topRated)),
                   _topRatedMovies(),
-                  _headerText("Discover Movies"),
+                  _headerText((LocaleKeys.headers_discoverMovies)),
                   _discoverMovies(),
-                  _headerText("Currently in Theatres"),
+                  _headerText((LocaleKeys.headers_inTheatres)),
                   _inTheatres(),
-                  _headerText("Upcoming"),
+                  _headerText((LocaleKeys.headers_upcoming)),
                   _upcomingMovies()
                 ],
               );
@@ -67,7 +69,7 @@ class _HomeViewState extends State<HomeView> {
                 ],
               );
             } else {
-              return const Center(child: Text('No data found'));
+              return const Center(child: Text((LocaleKeys.errors_noData)));
             }
           },
         );
@@ -214,7 +216,7 @@ class _HomeViewState extends State<HomeView> {
     return Text(
       text,
       style: ProjectTextStyles.instance.headerTextStyles,
-    );
+    ).tr();
   }
 
   Consumer<HomeViewmodel> _upcomingMovies() {

@@ -1,0 +1,16 @@
+{
+    "headers":{
+        "inTheatres":"Sinemalarda",
+        "trendingText":"Trendler",
+        "popular":"Popülerler",
+        "upcoming":"Yakında",
+        "continueWatchText":"İzlemeye devam et",
+        "addTheWatchList":"Listeme Ekle",
+        "topRated":"En İyiler",
+        "discoverMovies":"Gözat",
+        "watch":"İzle"
+    },
+    "errors":{
+        "noData":"Film bulunamadı."
+    }
+}

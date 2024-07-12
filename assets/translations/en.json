@@ -1,0 +1,16 @@
+{
+    "headers":{
+        "inTheatres":"Currently in Theatres",
+        "trendingText":"Trending",
+        "popular":"Populars",
+        "upcoming":"Upcoming Movies",
+        "continueWatchText":"Continue Watching",
+        "addTheWatchList":"Add the Watchlist",
+        "topRated":"Top Rated",
+        "discoverMovies":"Discover Movies",
+        "watch":"Watch"
+    },
+    "errors":{
+        "noData":"No Data Found"
+    }
+}

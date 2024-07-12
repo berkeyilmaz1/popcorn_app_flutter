@@ -1,9 +1,12 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/feature/home/model/popular_movies_model.dart';
 import 'package:movie_app/feature/movie_card_info/image_model.dart';
 import 'package:movie_app/product/constants/strings.dart';
 import 'package:movie_app/product/constants/text_styles.dart';
+import 'package:movie_app/product/enums/locales.dart';
 import 'package:movie_app/product/extensions/extensions.dart';
+import 'package:movie_app/product/localization/locale_keys.g.dart';
 import 'package:movie_app/product/services/image_services.dart';
 
 class GradientImage extends StatefulWidget {
@@ -36,16 +39,19 @@ class _GradientImageState extends State<GradientImage> {
 
   ElevatedButton _watchButton() {
     return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8), // Köşe yuvarlama miktarı
-          ),
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8), // Köşe yuvarlama miktarı
         ),
-        onPressed: () {},
-        child: Text(
-          "Watch ${widget.movie.title.toString()}",
-          style: ProjectTextStyles.instance.headerTextStyles,
-        ));
+      ),
+      onPressed: () {},
+      child: Text(
+        context.locale == Locales.tr
+            ? "${widget.movie.title} ${LocaleKeys.headers_watch.tr()}"
+            : "${LocaleKeys.headers_watch.tr()} ${widget.movie.title}",
+        style: ProjectTextStyles.instance.headerTextStyles,
+      ),
+    );
   }
 
   ShaderMask _shaderEffect() {
@@ -83,12 +89,12 @@ class _GradientImageState extends State<GradientImage> {
 
   SizedBox _movieImage(BuildContext context, ImageModel image) {
     return SizedBox(
-            height: MediaQuery.of(context).size.height / 4,
-            child: Padding(
-              padding: const ProjectPadding.halfAll(),
-              child: Image.network(
-                ImageModel().pathToImage(image.filePath ?? "").toString(),
-              ),
-            ));
+        height: MediaQuery.of(context).size.height / 4,
+        child: Padding(
+          padding: const ProjectPadding.halfAll(),
+          child: Image.network(
+            ImageModel().pathToImage(image.filePath ?? "").toString(),
+          ),
+        ));
   }
 }
