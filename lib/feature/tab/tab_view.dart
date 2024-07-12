@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/feature/favorites/view/favorites_view.dart';
 import 'package:movie_app/feature/home/view/home_view.dart';
 import 'package:movie_app/feature/search/view/search_view.dart';
+import 'package:movie_app/feature/welcome_page/welcome_page.dart';
 import 'package:movie_app/product/constants/strings.dart';
 import 'package:movie_app/product/constants/text_styles.dart';
 import 'package:movie_app/product/enums/icon_enums.dart';
@@ -19,15 +20,25 @@ class MovieTabView extends StatelessWidget {
     return DefaultTabController(
       length: TabEnums.values.length,
       child: Scaffold(
-        appBar: _appBar(),
+        appBar: _appBar(context),
         bottomNavigationBar: _bottomNavBar(),
         body: _bodyTabBar(),
       ),
     );
   }
 
-  AppBar _appBar() {
+  AppBar _appBar(BuildContext context) {
     return AppBar(
+      actions: [
+        IconButton(
+            onPressed: () => Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                    builder: (context) => const WelcomePage(),
+                  ),
+                  (route) => false,
+                ),
+            icon: const Icon(Icons.exit_to_app_rounded))
+      ],
       title: Text(
         StringConstants.instance.appName,
         style: ProjectTextStyles.instance.appNameStyle,
