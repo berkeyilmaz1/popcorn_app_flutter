@@ -1,0 +1,64 @@
+name: movie_app
+description: "A new Flutter project."
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.3 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #Json
+  json_serializable: ^6.8.0
+
+  #Core
+  equatable: ^2.0.5
+
+  #Network
+  dio: ^5.5.0+1
+  http: ^1.2.1
+
+  #State
+  provider: ^6.1.2
+
+  #Configure
+  envied: ^0.5.4+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.4.11
+  envied_generator: ^0.5.4+1
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
+
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Raleway-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Raleway-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Raleway-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Raleway-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Raleway-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Raleway-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Raleway-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Raleway-Light.ttf
+          weight: 300
