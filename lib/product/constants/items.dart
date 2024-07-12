@@ -13,4 +13,5 @@ class ProjectColors {
   static ProjectColors instance = ProjectColors._();
 
   Color get white => Colors.white;
+  Color get blue => Colors.blue;
 }

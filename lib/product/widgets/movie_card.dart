@@ -3,6 +3,7 @@ import 'package:movie_app/feature/home/model/popular_movies_model.dart';
 import 'package:movie_app/feature/movie_card_info/movie_card_info.dart';
 import 'package:movie_app/product/constants/text_styles.dart';
 import 'package:movie_app/product/extensions/extensions.dart';
+import 'package:movie_app/product/init/config/app_environment.dart';
 
 class MovieCard extends StatefulWidget {
   const MovieCard(
@@ -59,7 +60,7 @@ class _MovieCardState extends State<MovieCard> {
                 movie: widget.movie,
               ))),
       child: Image.network(
-        "https://image.tmdb.org/t/p/w500${(widget.movie.posterPath)}",
+        AppEnvironmentItems.imageBaseUrl.value + (widget.movie.posterPath),
         scale: 4.5,
       ),
     );
