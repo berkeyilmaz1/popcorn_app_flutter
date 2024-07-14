@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/feature/favorites/view/favorites_view.dart';
-import 'package:movie_app/feature/home/view/home_view.dart';
-import 'package:movie_app/feature/search/view/search_view.dart';
-import 'package:movie_app/feature/welcome_page/welcome_page.dart';
-import 'package:movie_app/product/constants/strings.dart';
-import 'package:movie_app/product/constants/text_styles.dart';
-import 'package:movie_app/product/enums/icon_enums.dart';
+import 'package:Popcorn/feature/favorites/view/favorites_view.dart';
+import 'package:Popcorn/feature/home/view/home_view.dart';
+import 'package:Popcorn/feature/search/view/search_view.dart';
+import 'package:Popcorn/feature/welcome_page/welcome_page.dart';
+import 'package:Popcorn/product/constants/strings.dart';
+import 'package:Popcorn/product/constants/text_styles.dart';
+import 'package:Popcorn/product/enums/icon_enums.dart';
 
 /// Enums for tabs.
 enum TabEnums { home, favorites, search }

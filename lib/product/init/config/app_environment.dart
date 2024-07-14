@@ -1,4 +1,4 @@
-import 'package:movie_app/product/init/config/app_configuration.dart';
+import 'package:Popcorn/product/init/config/app_configuration.dart';
 
 final class AppEnvironment {
   AppEnvironment.setup({required AppConfiguration config}) {

@@ -1,11 +1,11 @@
+import 'package:Popcorn/feature/home/viewmodel/home_viewmodel.dart';
+import 'package:Popcorn/feature/welcome_page/welcome_page.dart';
+import 'package:Popcorn/product/init/config/app_environment.dart';
+import 'package:Popcorn/product/init/config/dev_env.dart';
+import 'package:Popcorn/product/localization/localization.dart';
+import 'package:Popcorn/product/theme/theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/feature/home/viewmodel/home_viewmodel.dart';
-import 'package:movie_app/feature/welcome_page/welcome_page.dart';
-import 'package:movie_app/product/init/config/app_environment.dart';
-import 'package:movie_app/product/init/config/dev_env.dart';
-import 'package:movie_app/product/localization/localization.dart';
-import 'package:movie_app/product/theme/theme.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
@@ -25,8 +25,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => HomeViewmodel(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => HomeViewmodel(),
+        ),
+      ],
       child: MaterialApp(
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,

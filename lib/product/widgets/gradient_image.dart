@@ -1,13 +1,13 @@
+import 'package:Popcorn/feature/home/model/popular_movies_model.dart';
+import 'package:Popcorn/feature/movie_card_info/model/image_model.dart';
+import 'package:Popcorn/product/constants/strings.dart';
+import 'package:Popcorn/product/constants/text_styles.dart';
+import 'package:Popcorn/product/enums/locales.dart';
+import 'package:Popcorn/product/extensions/extensions.dart';
+import 'package:Popcorn/product/localization/locale_keys.g.dart';
+import 'package:Popcorn/product/services/image_services.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/feature/home/model/popular_movies_model.dart';
-import 'package:movie_app/feature/movie_card_info/image_model.dart';
-import 'package:movie_app/product/constants/strings.dart';
-import 'package:movie_app/product/constants/text_styles.dart';
-import 'package:movie_app/product/enums/locales.dart';
-import 'package:movie_app/product/extensions/extensions.dart';
-import 'package:movie_app/product/localization/locale_keys.g.dart';
-import 'package:movie_app/product/services/image_services.dart';
 
 class GradientImage extends StatefulWidget {
   const GradientImage({super.key, required this.movie});

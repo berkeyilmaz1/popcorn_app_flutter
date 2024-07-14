@@ -1,9 +1,9 @@
+import 'package:Popcorn/feature/home/model/popular_movies_model.dart';
+import 'package:Popcorn/feature/movie_card_info/movie_card_info.dart';
+import 'package:Popcorn/product/constants/text_styles.dart';
+import 'package:Popcorn/product/extensions/extensions.dart';
+import 'package:Popcorn/product/init/config/app_environment.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/feature/home/model/popular_movies_model.dart';
-import 'package:movie_app/feature/movie_card_info/movie_card_info.dart';
-import 'package:movie_app/product/constants/text_styles.dart';
-import 'package:movie_app/product/extensions/extensions.dart';
-import 'package:movie_app/product/init/config/app_environment.dart';
 
 class MovieCard extends StatefulWidget {
   const MovieCard(
