@@ -1,12 +1,13 @@
 import 'dart:convert';
 
+import 'package:Popcorn/feature/movie_card_info/model/image_model.dart';
+import 'package:Popcorn/product/exceptions/exceptions.dart';
+import 'package:Popcorn/product/init/config/app_environment.dart';
 import 'package:http/http.dart' as http;
-import 'package:movie_app/feature/movie_card_info/image_model.dart';
-import 'package:movie_app/product/exceptions/exceptions.dart';
-import 'package:movie_app/product/init/config/app_environment.dart';
 
 class ImageServices {
   final String _apiKeyText = "/images?api_key=";
+
   Future<List<ImageModel>> fetchImages(int id) async {
     final response = await http.get(Uri.parse(
         "${AppEnvironmentItems.imagesServiceUrl.value}$id$_apiKeyText${AppEnvironmentItems.apiKey.value}"));

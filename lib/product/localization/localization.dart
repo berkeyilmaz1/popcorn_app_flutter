@@ -1,9 +1,9 @@
+import 'package:Popcorn/product/enums/locales.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/product/enums/locales.dart';
- 
+
 @immutable
-final class ProductLocalization extends EasyLocalization {
+final class ProductLocalization extends EasyLocalization  {
   ProductLocalization({
     super.key,
     required super.child,
