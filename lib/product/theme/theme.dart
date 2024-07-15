@@ -7,6 +7,10 @@ class AppTheme {
         iconTheme: const IconThemeData(color: Colors.white),
         elevatedButtonTheme: const ElevatedButtonThemeData(
             style: ButtonStyle(
+                shape: WidgetStatePropertyAll(
+                  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8))),
+                ),
                 backgroundColor: WidgetStatePropertyAll(Colors.blue),
                 foregroundColor: WidgetStatePropertyAll(Colors.white))),
         colorScheme: const ColorScheme(
