@@ -8,9 +8,14 @@
         "addTheWatchList":"Listeme Ekle",
         "topRated":"En İyiler",
         "discoverMovies":"Gözat",
-        "watch":"İzle"
+        "watch":"İzle",
+        "myWatchlist":"Listem"
     },
     "errors":{
         "noData":"Film bulunamadı."
+    },
+    "buttonNames":{
+        "addTheWatchListButton":"Listeme Ekle",
+        "watchTrailer":"Fragmanı izle"
     }
 }

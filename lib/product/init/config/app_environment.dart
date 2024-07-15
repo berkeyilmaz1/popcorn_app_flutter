@@ -1,4 +1,4 @@
-import 'package:Popcorn/product/init/config/app_configuration.dart';
+import 'package:popcorn/product/init/config/app_configuration.dart';
 
 final class AppEnvironment {
   AppEnvironment.setup({required AppConfiguration config}) {
@@ -13,7 +13,11 @@ enum AppEnvironmentItems {
   imageBaseUrl,
   moviesServiceUrl,
   imagesServiceUrl,
-  discoverServiceUrl;
+  discoverServiceUrl,
+  getActorBaseUrl,
+  getActorApiKey,
+  getDetailBaseUrl,
+  getDetailApikey;
 
   String get value {
     try {
@@ -29,6 +33,14 @@ enum AppEnvironmentItems {
           return AppEnvironment._config.imagesServiceUrl;
         case AppEnvironmentItems.discoverServiceUrl:
           return AppEnvironment._config.discoverServiceUrl;
+        case AppEnvironmentItems.getActorBaseUrl:
+          return AppEnvironment._config.getActorBaseUrl;
+        case AppEnvironmentItems.getActorApiKey:
+          return AppEnvironment._config.getActorApiKey;
+        case AppEnvironmentItems.getDetailBaseUrl:
+          return AppEnvironment._config.getDetailBaseUrl;
+        case AppEnvironmentItems.getDetailApikey:
+          return AppEnvironment._config.getDetailApikey;
       }
     } catch (e) {
       throw Exception('AppEnvironment is not initialized.');

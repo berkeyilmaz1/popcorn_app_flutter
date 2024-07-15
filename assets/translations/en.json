@@ -8,9 +8,14 @@
         "addTheWatchList":"Add the Watchlist",
         "topRated":"Top Rated",
         "discoverMovies":"Discover Movies",
-        "watch":"Watch"
+        "watch":"Watch",
+        "myWatchlist":"My Watchlist"
     },
     "errors":{
         "noData":"No Data Found"
+    },
+    "buttonNames":{
+        "addTheWatchListButton":"Add the Watchlist",
+        "watchTrailer":"Watch Trailer"
     }
 }

@@ -4,4 +4,8 @@ abstract class AppConfiguration {
   String get moviesServiceUrl;
   String get imagesServiceUrl;
   String get discoverServiceUrl;
+  String get getActorBaseUrl;
+  String get getActorApiKey;
+  String get getDetailBaseUrl;
+  String get getDetailApikey;
 }
