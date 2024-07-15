@@ -1,11 +1,12 @@
-import 'package:Popcorn/feature/home/viewmodel/home_viewmodel.dart';
-import 'package:Popcorn/feature/welcome_page/welcome_page.dart';
-import 'package:Popcorn/product/init/config/app_environment.dart';
-import 'package:Popcorn/product/init/config/dev_env.dart';
-import 'package:Popcorn/product/localization/localization.dart';
-import 'package:Popcorn/product/theme/theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:popcorn/feature/home/viewmodel/home_viewmodel.dart';
+import 'package:popcorn/feature/watchlist/viewmodel/watchlist_viewmodel.dart';
+import 'package:popcorn/feature/welcome_page/welcome_page.dart';
+import 'package:popcorn/product/init/config/app_environment.dart';
+import 'package:popcorn/product/init/config/dev_env.dart';
+import 'package:popcorn/product/localization/localization.dart';
+import 'package:popcorn/product/theme/theme.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
@@ -29,6 +30,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => HomeViewmodel(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => WatchlistViewmodel(),
         ),
       ],
       child: MaterialApp(
