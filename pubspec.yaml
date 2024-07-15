@@ -1,4 +1,4 @@
-name: movie_app
+name: popcorn
 description: "A new Flutter project."
 
 version: 1.0.0+1
@@ -12,6 +12,7 @@ dependencies:
 
   #Json
   json_serializable: ^6.8.0
+  json_annotation: ^4.9.0
 
   #Core
   equatable: ^2.0.5
@@ -25,8 +26,11 @@ dependencies:
 
   #Configure
   envied: ^0.5.4+1
+
+  #Image
   flutter_svg: ^2.0.10+1
 
+  #Localization
   easy_localization: ^3.0.7
 
 dev_dependencies:
