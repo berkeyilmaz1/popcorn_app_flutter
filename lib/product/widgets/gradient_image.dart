@@ -1,13 +1,14 @@
-import 'package:Popcorn/feature/home/model/popular_movies_model.dart';
-import 'package:Popcorn/feature/movie_card_info/model/image_model.dart';
-import 'package:Popcorn/product/constants/strings.dart';
-import 'package:Popcorn/product/constants/text_styles.dart';
-import 'package:Popcorn/product/enums/locales.dart';
-import 'package:Popcorn/product/extensions/extensions.dart';
-import 'package:Popcorn/product/localization/locale_keys.g.dart';
-import 'package:Popcorn/product/services/image_services.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:popcorn/feature/home/model/movie_model.dart';
+import 'package:popcorn/feature/movie_card_info/model/image_model.dart';
+import 'package:popcorn/feature/movie_card_info/view/movie_card_info.dart';
+import 'package:popcorn/product/constants/strings.dart';
+import 'package:popcorn/product/constants/text_styles.dart';
+import 'package:popcorn/product/enums/locales.dart';
+import 'package:popcorn/product/extensions/extensions.dart';
+import 'package:popcorn/product/localization/locale_keys.g.dart';
+import 'package:popcorn/product/services/image_services.dart';
 
 class GradientImage extends StatefulWidget {
   const GradientImage({super.key, required this.movie});
@@ -44,8 +45,16 @@ class _GradientImageState extends State<GradientImage> {
           borderRadius: BorderRadius.circular(8), // Köşe yuvarlama miktarı
         ),
       ),
-      onPressed: () {},
+      onPressed: () {
+        if (images != null) {
+          print("presses");
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => MovieCardInfo(movie: widget.movie),
+          ));
+        }
+      },
       child: Text(
+        // ignore: unrelated_type_equality_checks
         context.locale == Locales.tr
             ? "${widget.movie.title} ${LocaleKeys.headers_watch.tr()}"
             : "${LocaleKeys.headers_watch.tr()} ${widget.movie.title}",
