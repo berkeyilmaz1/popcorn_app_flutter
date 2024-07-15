@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:Popcorn/feature/favorites/view/favorites_view.dart';
-import 'package:Popcorn/feature/home/view/home_view.dart';
-import 'package:Popcorn/feature/search/view/search_view.dart';
-import 'package:Popcorn/feature/welcome_page/welcome_page.dart';
-import 'package:Popcorn/product/constants/strings.dart';
-import 'package:Popcorn/product/constants/text_styles.dart';
-import 'package:Popcorn/product/enums/icon_enums.dart';
+import 'package:popcorn/feature/home/view/home_view.dart';
+import 'package:popcorn/feature/search/view/search_view.dart';
+import 'package:popcorn/feature/watchlist/view/watchlist_view.dart';
+import 'package:popcorn/feature/welcome_page/welcome_page.dart';
+import 'package:popcorn/product/constants/strings.dart';
+import 'package:popcorn/product/constants/text_styles.dart';
+import 'package:popcorn/product/enums/icon_enums.dart';
 
 /// Enums for tabs.
 enum TabEnums { home, favorites, search }
@@ -65,7 +65,7 @@ class MovieTabView extends StatelessWidget {
   TabBarView _bodyTabBar() {
     return const TabBarView(physics: NeverScrollableScrollPhysics(), children: [
       HomeView(),
-      FavoritesView(),
+      WatchListView(),
       SearchView(),
     ]);
   }

@@ -1,17 +1,22 @@
 import 'dart:convert';
 
-import 'package:Popcorn/feature/home/model/popular_movies_model.dart';
-import 'package:Popcorn/product/exceptions/exceptions.dart';
-import 'package:Popcorn/product/init/config/app_environment.dart';
 import 'package:http/http.dart' as http;
+import 'package:popcorn/feature/home/model/movie_model.dart';
+import 'package:popcorn/product/exceptions/exceptions.dart';
+import 'package:popcorn/product/init/config/app_environment.dart';
 
 class MoviesServices {
   final String _apiKeyText = "?api_key=";
-    final String _langKeyText = "&language=";
+  final String _langKeyText = "&language=";
 
-  Future<List<Movie>> fetchMovies(String pathName,String langCode) async {
+  Future<List<Movie>> fetchMovies(String pathName, String langCode) async {
     final response = await http.get(Uri.parse(
-        "${AppEnvironmentItems.moviesServiceUrl.value}$pathName$_apiKeyText${AppEnvironmentItems.apiKey.value}$_langKeyText$langCode"));
+        AppEnvironmentItems.moviesServiceUrl.value +
+            pathName +
+            _apiKeyText +
+            AppEnvironmentItems.apiKey.value +
+            _langKeyText +
+            langCode));
 
     if (response.statusCode == 200) {
       Map<String, dynamic> json = jsonDecode(response.body);

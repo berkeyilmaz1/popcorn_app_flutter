@@ -1,10 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:movie_app/feature/home/model/popular_movies_model.dart';
-import 'package:movie_app/product/services/discover_movies_services.dart';
-import 'package:movie_app/product/services/movies_services.dart';
-import 'package:movie_app/product/widgets/gradient_image.dart';
+import 'package:popcorn/feature/home/model/movie_model.dart';
+import 'package:popcorn/product/services/discover_movies_services.dart';
+import 'package:popcorn/product/services/movies_services.dart';
+import 'package:popcorn/product/widgets/gradient_image.dart';
 
 class HomeViewmodel extends ChangeNotifier {
   late Future<List<Movie>> popularMovies;
@@ -16,21 +16,31 @@ class HomeViewmodel extends ChangeNotifier {
   final DiscoverMoviesServices _discoverMoviesServices =
       DiscoverMoviesServices();
 
-  HomeViewmodel() {
-    _initializeMovies();
+  String initLangCode = "tr";
+
+  String langCodeChanger(String langCode) {
+    langCode == "en" ? initLangCode = "en" : initLangCode = "tr";
+
+    return initLangCode;
   }
 
-  void _initializeMovies() {
+  HomeViewmodel() {
+    initializeMovies();
+  }
+  void initializeMovies() {
     popularMovies = _fetchMovies(_moviesService, "popular");
     upcomingMovies = _fetchMovies(_moviesService, "upcoming");
     topRatedMovies = _fetchMovies(_moviesService, "top_rated");
     inTheatres = _fetchMovies(_moviesService, "now_playing");
-    discoverMovies =
-        _discoverMoviesServices.fetchMovies(pageNumber: Random().nextInt(10));
+    discoverMovies = _discoverMoviesServices.fetchMovies(
+        pageNumber: Random().nextInt(10), initLangCode);
   }
 
-  Future<List<Movie>> _fetchMovies(MoviesServices service, String pathName) {
-    return service.fetchMovies(pathName);
+  Future<List<Movie>> _fetchMovies(
+    MoviesServices service,
+    String pathName,
+  ) {
+    return service.fetchMovies(pathName, initLangCode);
   }
 
   FutureBuilder getFirstMovieofPopular() {
@@ -46,7 +56,7 @@ class HomeViewmodel extends ChangeNotifier {
         } else {
           // İlk elemanı almak
           Movie firstMovie = snapshot.data!.first;
-          print(firstMovie);
+
           return GradientImage(
             movie: firstMovie,
           );

@@ -1,12 +1,12 @@
-import 'package:Popcorn/feature/home/model/popular_movies_model.dart';
-import 'package:Popcorn/feature/home/viewmodel/home_viewmodel.dart';
-import 'package:Popcorn/product/constants/text_styles.dart';
-import 'package:Popcorn/product/extensions/extensions.dart';
-import 'package:Popcorn/product/localization/locale_keys.g.dart';
-import 'package:Popcorn/product/widgets/gradient_image.dart';
-import 'package:Popcorn/product/widgets/movie_card.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:popcorn/feature/home/model/movie_model.dart';
+import 'package:popcorn/feature/home/viewmodel/home_viewmodel.dart';
+import 'package:popcorn/product/constants/text_styles.dart';
+import 'package:popcorn/product/extensions/extensions.dart';
+import 'package:popcorn/product/localization/locale_keys.g.dart';
+import 'package:popcorn/product/widgets/gradient_image.dart';
+import 'package:popcorn/product/widgets/movie_card.dart';
 import 'package:provider/provider.dart';
 
 class HomeView extends StatefulWidget {
