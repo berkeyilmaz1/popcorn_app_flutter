@@ -3,6 +3,12 @@ import 'package:popcorn/feature/home/model/movie_model.dart';
 
 class WatchlistViewmodel extends ChangeNotifier {
   final List<Movie> watchlist = [];
+  final ScrollController scrollController = ScrollController();
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
 
   bool isTapped = false;
 

@@ -16,38 +16,36 @@ class WatchListView extends StatefulWidget {
 
 class _WatchListViewState extends State<WatchListView>
     with TickerProviderStateMixin {
-  late Future<List<Movie>> myWatchList;
-  final ScrollController _scrollController = ScrollController();
 
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
+
+
+ 
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _scrollController.animateTo(
-            0.0,
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeOut,
-          );
-        },
-        child: const Icon(Icons.arrow_upward_rounded),
-      ),
-      body: Padding(
-        padding: const ProjectPadding.all(),
-        child: Consumer<WatchlistViewmodel>(
-          builder: (context, provider, child) => Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              _watchlistHeader().tr(),
-              const SizedBox(height: 20),
-              _moviesGridview(provider),
-            ],
+    return Consumer<WatchlistViewmodel>(
+      builder: (context, value, child) => Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            value.scrollController.animateTo(
+              0.0,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut,
+            );
+          },
+          child: const Icon(Icons.arrow_upward_rounded),
+        ),
+        body: Padding(
+          padding: const ProjectPadding.all(),
+          child: Consumer<WatchlistViewmodel>(
+            builder: (context, provider, child) => Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                _watchlistHeader().tr(),
+                const SizedBox(height: 20),
+                _moviesGridview(provider),
+              ],
+            ),
           ),
         ),
       ),
@@ -58,7 +56,7 @@ class _WatchListViewState extends State<WatchListView>
     return Expanded(
       child: Consumer<WatchlistViewmodel>(
         builder: (context, value, child) => GridView.builder(
-          controller: _scrollController,
+          controller: value.scrollController,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
           ),
