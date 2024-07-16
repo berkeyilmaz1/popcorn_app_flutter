@@ -8,8 +8,8 @@ class Movie extends Equatable {
   final int? id;
   final String? title;
   final String? overview;
-  final String posterPath;
-  final double voteAverage;
+  final String? posterPath;
+  final double? voteAverage;
   final String? releaseDate;
 
   const Movie(

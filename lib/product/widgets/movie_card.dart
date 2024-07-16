@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:popcorn/feature/home/model/movie_model.dart';
 import 'package:popcorn/feature/movie_card_info/view/movie_card_info.dart';
 import 'package:popcorn/product/constants/text_styles.dart';
 import 'package:popcorn/product/extensions/extensions.dart';
 import 'package:popcorn/product/init/config/app_environment.dart';
-import 'package:flutter/material.dart';
 
 class MovieCard extends StatefulWidget {
   const MovieCard(
@@ -60,7 +60,8 @@ class _MovieCardState extends State<MovieCard> {
                 movie: widget.movie,
               ))),
       child: Image.network(
-        AppEnvironmentItems.imageBaseUrl.value + (widget.movie.posterPath),
+        AppEnvironmentItems.imageBaseUrl.value +
+            (widget.movie.posterPath ?? ""),
         scale: 4.5,
       ),
     );

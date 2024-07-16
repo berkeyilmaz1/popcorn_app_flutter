@@ -230,8 +230,9 @@ class _MovieCardInfoState extends State<MovieCardInfo> {
             const Icon(
               Icons.star_rate_rounded,
             ),
+           
             Text(
-              widget.movie.voteAverage.toStringAsFixed(2),
+              widget.movie.voteAverage!.toStringAsFixed(2) ,
               style: ProjectTextStyles.instance.movieInfoDesc,
             ),
           ],
