@@ -78,18 +78,8 @@ class _SearchViewState extends SearchViewmodel {
               ),
             ),
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width / 4,
-            child: IconButton(
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-              onPressed: searchMovie,
-              icon: const Icon(Icons.search),
-            ),
-          ),
+          ElevatedButton(
+              onPressed: searchMovie, child: const Icon(Icons.search)),
         ],
       ),
     );
