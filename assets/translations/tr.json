@@ -9,7 +9,8 @@
         "topRated":"En İyiler",
         "discoverMovies":"Gözat",
         "watch":"İzle",
-        "myWatchlist":"Listem"
+        "myWatchlist":"Listem",
+        "search":"Ara"
     },
     "errors":{
         "noData":"Film bulunamadı."

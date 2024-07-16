@@ -9,7 +9,8 @@
         "topRated":"Top Rated",
         "discoverMovies":"Discover Movies",
         "watch":"Watch",
-        "myWatchlist":"My Watchlist"
+        "myWatchlist":"My Watchlist",
+        "search":"Search"
     },
     "errors":{
         "noData":"No Data Found"
