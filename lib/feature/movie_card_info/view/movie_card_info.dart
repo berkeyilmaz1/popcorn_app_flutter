@@ -114,8 +114,7 @@ class _MovieCardInfoState extends State<MovieCardInfo> {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (snapshot.hasData) {
             return ListView.builder(
-              /// get first 7 actors
-              itemCount: 7,
+              itemCount: snapshot.data?.length ?? 0,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 ActorModel actor = snapshot.data![index];
@@ -230,9 +229,8 @@ class _MovieCardInfoState extends State<MovieCardInfo> {
             const Icon(
               Icons.star_rate_rounded,
             ),
-           
             Text(
-              widget.movie.voteAverage!.toStringAsFixed(2) ,
+              widget.movie.voteAverage!.toStringAsFixed(2),
               style: ProjectTextStyles.instance.movieInfoDesc,
             ),
           ],
@@ -301,7 +299,6 @@ class _MovieCardInfoState extends State<MovieCardInfo> {
                 ),
                 onPressed: () {
                   value.addMovieToWatchlist(widget.movie);
-                 
                 },
                 child: const Text(LocaleKeys.buttonNames_addTheWatchListButton)
                     .tr()),

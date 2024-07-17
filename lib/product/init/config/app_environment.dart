@@ -1,3 +1,4 @@
+import 'package:popcorn/product/exceptions/exceptions.dart';
 import 'package:popcorn/product/init/config/app_configuration.dart';
 
 final class AppEnvironment {
@@ -17,7 +18,9 @@ enum AppEnvironmentItems {
   getActorBaseUrl,
   getActorApiKey,
   getDetailBaseUrl,
-  getDetailApikey;
+  getDetailApikey,
+  searchServiceBaseUrl,
+  searchServiceApiKey;
 
   String get value {
     try {
@@ -41,9 +44,13 @@ enum AppEnvironmentItems {
           return AppEnvironment._config.getDetailBaseUrl;
         case AppEnvironmentItems.getDetailApikey:
           return AppEnvironment._config.getDetailApikey;
+        case AppEnvironmentItems.searchServiceBaseUrl:
+          return AppEnvironment._config.searchServiceBaseUrl;
+        case AppEnvironmentItems.searchServiceApiKey:
+          return AppEnvironment._config.searchServiceApiKey;
       }
     } catch (e) {
-      throw Exception('AppEnvironment is not initialized.');
+      throw AppEnvIsNotInitException();
     }
   }
 }

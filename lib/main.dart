@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:popcorn/feature/home/viewmodel/home_viewmodel.dart';
+ 
 import 'package:popcorn/feature/watchlist/viewmodel/watchlist_viewmodel.dart';
 import 'package:popcorn/feature/welcome_page/welcome_page.dart';
 import 'package:popcorn/product/init/config/app_environment.dart';

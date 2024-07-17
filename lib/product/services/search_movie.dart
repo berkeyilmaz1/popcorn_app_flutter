@@ -3,11 +3,14 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:popcorn/feature/home/model/movie_model.dart';
 import 'package:popcorn/product/exceptions/exceptions.dart';
+import 'package:popcorn/product/init/config/app_environment.dart';
 
 class SearchService {
   Future<List<Movie>> searchMovies(String movieName) async {
     final response = await http.get(Uri.parse(
-        "https://api.themoviedb.org/3/search/movie?query=$movieName&api_key=9951b759a9637d2c0390dba63a92e874"));
+        AppEnvironmentItems.searchServiceBaseUrl.value +
+            movieName +
+            AppEnvironmentItems.searchServiceApiKey.value));
 
     if (response.statusCode == 200) {
       Map<String, dynamic> json = jsonDecode(response.body);

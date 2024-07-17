@@ -47,7 +47,6 @@ class _GradientImageState extends State<GradientImage> {
       ),
       onPressed: () {
         if (images != null) {
-          print("presses");
           Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => MovieCardInfo(movie: widget.movie),
           ));

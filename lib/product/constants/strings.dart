@@ -11,6 +11,7 @@ class StringConstants {
   String get continueWatchText => "Continue Watch";
   String get addTheWatchList => "Add the Watchlist";
   String get exceptionMessage => 'Failed to load movies';
-  String get langTrMessage =>"Dil Türkçe Olarak Güncellendi.";
-  String get langEnMessage =>"Language has been updated to English.";
+  String get langTrMessage => "Dil Türkçe Olarak Güncellendi.";
+  String get langEnMessage => "Language has been updated to English.";
+  String get noMoviesFound => 'No movies found';
 }

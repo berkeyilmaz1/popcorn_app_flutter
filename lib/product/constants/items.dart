@@ -15,4 +15,6 @@ class ProjectColors {
   Color get white => Colors.white;
   Color get blue => Colors.blue;
   Color get black => Colors.black;
+  Color get transparant => Colors.transparent;
+  Color get red => Colors.red;
 }

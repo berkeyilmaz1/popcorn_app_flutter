@@ -28,12 +28,7 @@ class _MovieCardState extends State<MovieCard> {
         children: [
           Stack(
             alignment: Alignment.center,
-            children: [
-              ///125 is the 4 times smaller the images size [500].
-              _isTopRatedLogic(),
-              _moviePosters(),
-              _topRatedNumbers()
-            ],
+            children: [_isTopRatedLogic(), _moviePosters(), _topRatedNumbers()],
           ),
         ],
       ),
@@ -43,7 +38,7 @@ class _MovieCardState extends State<MovieCard> {
   SizedBox _isTopRatedLogic() {
     return ((widget.isTopRated)
 
-        ///175 width for the text can me moved left
+        ///175 width for the text can be moved left
         ? const SizedBox(
             width: 175,
           )

@@ -8,4 +8,6 @@ abstract class AppConfiguration {
   String get getActorApiKey;
   String get getDetailBaseUrl;
   String get getDetailApikey;
+  String get searchServiceBaseUrl;
+  String get searchServiceApiKey;
 }

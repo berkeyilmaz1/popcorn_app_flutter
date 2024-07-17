@@ -4,6 +4,7 @@ import 'package:popcorn/feature/home/model/movie_model.dart';
 import 'package:popcorn/feature/movie_card_info/view/movie_card_info.dart';
 import 'package:popcorn/feature/search/viewmodel/search_viewmodel.dart/search_viewmodel.dart';
 import 'package:popcorn/product/constants/items.dart';
+import 'package:popcorn/product/constants/strings.dart';
 import 'package:popcorn/product/constants/text_styles.dart';
 import 'package:popcorn/product/extensions/extensions.dart';
 import 'package:popcorn/product/localization/locale_keys.g.dart';
@@ -27,24 +28,28 @@ class _SearchViewState extends SearchViewmodel {
           children: [
             _searchHeader(),
             _searchBar(),
-            Expanded(
-              child: FutureBuilder<List<Movie>>(
-                future: searchedMovies,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const Center(child: CircularProgressIndicator());
-                  } else if (snapshot.hasError) {
-                    return Center(child: Text('Error: ${snapshot.error}'));
-                  } else if (snapshot.hasData) {
-                    return _movieList(snapshot.data!);
-                  } else {
-                    return const Center(child: Text('No data found'));
-                  }
-                },
-              ),
-            ),
+            _movieListBuilder(),
           ],
         ),
+      ),
+    );
+  }
+
+  Expanded _movieListBuilder() {
+    return Expanded(
+      child: FutureBuilder<List<Movie>>(
+        future: searchedMovies,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else if (snapshot.hasData) {
+            return _movieList(snapshot.data!);
+          } else {
+            return Center(child: Text(StringConstants.instance.noDataFound));
+          }
+        },
       ),
     );
   }
@@ -92,6 +97,7 @@ class _SearchViewState extends SearchViewmodel {
         itemCount: movies.length,
         itemBuilder: (context, index) {
           final movie = movies[index];
+          var src = "https://image.tmdb.org/t/p/w500${movie.posterPath}";
           return Padding(
             padding: const ProjectPadding.halfAll(),
             child: ListTile(
@@ -106,10 +112,7 @@ class _SearchViewState extends SearchViewmodel {
                 movie.releaseDate ?? "",
                 style: ProjectTextStyles.instance.movieInfoYear,
               ),
-              leading: movie.posterPath != null
-                  ? Image.network(
-                      "https://image.tmdb.org/t/p/w500${movie.posterPath}")
-                  : null,
+              leading: movie.posterPath != null ? Image.network(src) : null,
             ),
           );
         },
